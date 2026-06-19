@@ -11,16 +11,16 @@
 
 # Dipartimenti
 - id_dipartimento          PRIMARY KEY UNIQUE NN INT
-- nome                     VARCHAR (100)
+- nome                     VARCHAR (100) NN
 
 # Corsi_Laurea
 - id_corso_laurea          PRIMARY KEY UNIQUE NN INT
-- nome                     VARCHAR (100)
+- nome                     VARCHAR (100) NN
 - id_dipartimento          FOREIGN KEY NN INT
 
 # Corsi
 - id_corso                 PRIMARY KEY UNIQUE NN INT
-- nome                     VARCHAR (100)
+- nome                     VARCHAR (100) NN
 - id_corso_laurea FK       FOREIGN KEY NN INT
     
 
@@ -31,13 +31,13 @@
 
 # Insegnanti
 - id_insegnante            PRIMARY KEY UNIQUE NN INT
-- nome                     VARCHAR (20)
-- cognome                  VARCHAR (20)
-- email                    VARCHAR (50)
+- nome                     VARCHAR (20) NN
+- cognome                  VARCHAR (20) NN
+- email                    VARCHAR (50) NN
 
 # Appello_Esame
 - id_appello_esame         PRIMARY KEY UNIQUE NN INT
-- data_appello                     DATETIME 
+- data_appello             DATETIME   
 - id_corso FK              FOREIGN KEY NN INT
 
 f
@@ -45,10 +45,10 @@ f
 - id_appello_esame         FOREIGN KEY NN INT
 - id_matricola             FOREIGN KEY NN INT
 - voto                     INT 
--PK ( id_appello_esame, id_matricola)
+- PK ( id_appello_esame, id_matricola)
 
 # Studente 
 - id_matricola             PRIMARY KEY UNIQUE NN INT
-- nome                     VARCHAR (20)
-- cognome                  VARCHAR (20)
+- nome                     VARCHAR (20) NN
+- cognome                  VARCHAR (20) NN
 - id_corso_laurea FK       FOREIGN KEY NN INT
