@@ -10,32 +10,45 @@
 - Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi di stabilirne le relazioni. Infine, andiamo a definire le colonne e i tipi di dato di ogni tabella. 
 
 # Dipartimenti
-- id_dipartimento
-- nome
+- id_dipartimento          PRIMARY KEY UNIQUE NN INT
+- nome                     VARCHAR (100)
 
 # Corsi_Laurea
-- id_corso_laurea
-- nome
-- id_dipartimento FK
+- id_corso_laurea          PRIMARY KEY UNIQUE NN INT
+- nome                     VARCHAR (100)
+- id_dipartimento          FOREIGN KEY NN INT
 
 # Corsi
-- id_corsi
-- nome
-- id_corso_laurea FK
+- id_corso                 PRIMARY KEY UNIQUE NN INT
+- nome                     VARCHAR (100)
+- id_corso_laurea FK       FOREIGN KEY NN INT
+    
+
+# Corso_Insegnante          
+- id_corso                 FOREIGN KEY NN INT
+- id_insegnante            FOREIGN KEY NN INT
+- PK( id_corso, id_insegnante)
 
 # Insegnanti
-- id_insegnanti
-- nome
-- cognome
-- email
+- id_insegnante            PRIMARY KEY UNIQUE NN INT
+- nome                     VARCHAR (20)
+- cognome                  VARCHAR (20)
+- email                    VARCHAR (50)
 
 # Appello_Esame
-- id_appello_esame
-- nome
-- id-corsi FK
+- id_appello_esame         PRIMARY KEY UNIQUE NN INT
+- data_appello                     DATETIME 
+- id_corso FK              FOREIGN KEY NN INT
+
+f
+# Partecipazione_Esame
+- id_appello_esame         FOREIGN KEY NN INT
+- id_matricola             FOREIGN KEY NN INT
+- voto                     INT 
+-PK ( id_appello_esame, id_matricola)
 
 # Studente 
-- id_matricola
-- nome
-- cognome
-- id_corso_laurea FK
+- id_matricola             PRIMARY KEY UNIQUE NN INT
+- nome                     VARCHAR (20)
+- cognome                  VARCHAR (20)
+- id_corso_laurea FK       FOREIGN KEY NN INT
