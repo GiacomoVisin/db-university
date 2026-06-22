@@ -50,3 +50,9 @@ ORDER BY anno ;
 - SELECT office_address AS Address, COUNT(id) AS Teachers
 FROM `teachers`
 GROUP BY office_address; 
+
+
+# Calcolare la media dei voti di ogni appello d'esame
+- SELECT exam_id as Exam, ROUND(AVG(vote)) AS Media
+FROM `exam_student`
+group by exam_id 
