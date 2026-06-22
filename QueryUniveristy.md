@@ -30,3 +30,6 @@ AND date_of_birth < '1991-01-01';
 # Da quanti dipartimenti è composta l'università? (12)
 - SELECT COUNT(id) FROM `departments` as `n.departments`;
 
+
+# Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+- SELECT * FROM `teachers` WHERE phone IS NULL;
