@@ -1,5 +1,6 @@
 ## Query con Select
 
+
 # Selezionare tutti gli studenti nati nel 1990 (160)
 - SELECT * FROM `students` WHERE  year(date_of_birth) = 1990
   
@@ -33,3 +34,13 @@ AND date_of_birth < '1991-01-01';
 
 # Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 - SELECT * FROM `teachers` WHERE phone IS NULL;
+
+
+## Query con Grup by
+
+
+# Contare quanti iscritti ci sono stati ogni anno
+- SELECT YEAR(enrolment_date) AS anno, COUNT(*) AS totale_iscritti 
+FROM students 
+GROUP BY YEAR(enrolment_date) 
+ORDER BY anno ;
