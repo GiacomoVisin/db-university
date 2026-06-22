@@ -40,7 +40,13 @@ AND date_of_birth < '1991-01-01';
 
 
 # Contare quanti iscritti ci sono stati ogni anno
-- SELECT YEAR(enrolment_date) AS anno, COUNT(*) AS totale_iscritti 
-FROM students 
+- SELECT YEAR(enrolment_date) AS anno, COUNT(id) AS totale_iscritti 
+FROM `students`
 GROUP BY YEAR(enrolment_date) 
 ORDER BY anno ;
+
+
+# Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+- SELECT office_address AS Address, COUNT(id) AS Teachers
+FROM `teachers`
+GROUP BY office_address; 
