@@ -25,3 +25,8 @@ AND date_of_birth < '1991-01-01';
 
 # Selezionare tutti i corsi di laurea magistrale (38)
 - SELECT * FROM `degrees` WHERE name LIKE '%Magistrale%' ;
+
+
+# Da quanti dipartimenti è composta l'università? (12)
+- SELECT COUNT(id) FROM `departments` as `n.departments`;
+
