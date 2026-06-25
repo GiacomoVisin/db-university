@@ -22,3 +22,12 @@ WHERE `departments`.`name` = "Dipartimento di Neuroscienze"
 FROM `courses`
 JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
 WHERE `course_teacher`.`teacher_id` = 44
+
+
+# Selezionare tutti gli studenti con i dati relativi al corso di laurea a cuisono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+
+- SELECT * 
+FROM `students`
+JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+ORDER BY `students`.`name` ASC, `students`.`surname` ASC;
