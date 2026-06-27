@@ -12,8 +12,8 @@ WHERE `degrees`.`name` = "Corso di Laurea in Economia"
 
 - SELECT *
 FROM `degrees`
-JOIN `departments` ON `degrees`.`department_id` = `department_id`
-WHERE `departments`.`name` = "Dipartimento di Neuroscienze"
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze";
 
 
 # Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
@@ -67,5 +67,5 @@ FROM `exam_student`
 JOIN `students` ON `exam_student`.`student_id` = `students`.`id`
 JOIN `exams` ON `exam_student`.`exam_id` = `exams`.`id`
 JOIN `courses` ON `exams`.`course_id` = `courses`.`id`
-WHERE `vote` >= 18
-GROUP BY `exam_student`.`student_id`, `exams`.`course_id`;
+GROUP BY `exam_student`.`student_id`, `exams`.`course_id`
+HAVING MAX(`exam_student`.`vote`) >= 18;
